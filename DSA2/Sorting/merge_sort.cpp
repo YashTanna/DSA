@@ -1,11 +1,13 @@
 #include <bits/stdc++.h>
+
 using namespace std;
 
 void merge(vector<int> &arr, int low, int mid, int high)
 {
     vector<int> temp;
 
-    int left = low, right = mid + 1;
+    int left = low;
+    int right = mid + 1;
 
     while (left <= mid && right <= high)
     {
@@ -33,7 +35,6 @@ void mergeSort(vector<int> &arr, int low, int high)
     int mid = low + (high - low) / 2;
 
     mergeSort(arr, low, mid);
-
     mergeSort(arr, mid + 1, high);
 
     merge(arr, low, mid, high);
@@ -42,9 +43,13 @@ void mergeSort(vector<int> &arr, int low, int high)
 int main()
 {
     vector<int> arr = {5, 2, 8, 4, 1, 13, 46, 24, 52, 20, 9};
+
     mergeSort(arr, 0, arr.size() - 1);
+
     for (int x : arr)
         cout << x << " ";
+
     cout << endl;
+
     return 0;
 }
