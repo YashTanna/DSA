@@ -19,9 +19,9 @@ void sortZeroOneTwo(vector<int> &a)
     {
         if (a[mid] == 0)
         {
-            swap(a[mid], a[low]);
-            mid++;
-            low++;
+            swap(a[mid++], a[low++]);
+            // mid++;
+            // low++;
         }
         else if (a[mid] == 1)
         {
@@ -29,8 +29,8 @@ void sortZeroOneTwo(vector<int> &a)
         }
         else
         {
-            swap(a[mid], a[high]);
-            high--;
+            swap(a[mid], a[high--]);
+            // high--;
         }
     }
 }
